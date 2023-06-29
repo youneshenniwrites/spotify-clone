@@ -8,13 +8,13 @@ import {
   useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
-import { useAuthModal } from "@/hooks/useAuthModal";
+import { authModalStore } from "@/store/useAuthModal";
 import { Modal } from "./Modal";
 
 export const AuthModal = () => {
   const { session } = useSessionContext();
   const router = useRouter();
-  const { onClose, isOpen } = useAuthModal();
+  const { onClose, isOpen } = authModalStore();
 
   const supabaseClient = useSupabaseClient();
 

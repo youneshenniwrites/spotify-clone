@@ -9,7 +9,7 @@ import { toast } from "react-hot-toast";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { useUser } from "@/hooks/useUser";
-import { useAuthModal } from "@/hooks/useAuthModal";
+import { authModalStore } from "@/store/useAuthModal";
 import { Button } from "./Button";
 
 type HeaderProps = {
@@ -19,7 +19,7 @@ type HeaderProps = {
 
 export const Header = ({ children, className }: HeaderProps) => {
   const router = useRouter();
-  const authModal = useAuthModal();
+  const authModal = authModalStore();
 
   const supabaseClient = useSupabaseClient();
   const { user } = useUser();
