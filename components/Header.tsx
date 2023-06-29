@@ -9,7 +9,7 @@ import { toast } from "react-hot-toast";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { useUser } from "@/hooks/useUser";
-import { authModalStore } from "@/store/useAuthModal";
+import { authModalStore } from "@/store/authModalStore";
 import { Button } from "./Button";
 
 type HeaderProps = {

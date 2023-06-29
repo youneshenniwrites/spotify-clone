@@ -8,7 +8,7 @@ import {
   useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
-import { authModalStore } from "@/store/useAuthModal";
+import { authModalStore } from "@/store/authModalStore";
 import { Modal } from "./Modal";
 
 export const AuthModal = () => {
