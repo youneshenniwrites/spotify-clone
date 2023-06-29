@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { Button } from "./Button";
+import { useAuthModal } from "@/hooks/useAuthModal";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -14,6 +15,7 @@ interface HeaderProps {
 
 export const Header = ({ children, className }: HeaderProps) => {
   const router = useRouter();
+  const authModal = useAuthModal();
 
   const handleLogout = () => {};
 
@@ -98,6 +100,7 @@ export const Header = ({ children, className }: HeaderProps) => {
           <>
             <div>
               <Button
+                onClick={authModal.onOpen}
                 className="
                     bg-transparent 
                     text-neutral-300 
@@ -108,7 +111,9 @@ export const Header = ({ children, className }: HeaderProps) => {
               </Button>
             </div>
             <div>
-              <Button className="bg-white px-6 py-2">Log in</Button>
+              <Button onClick={authModal.onOpen} className="bg-white px-6 py-2">
+                Log in
+              </Button>
             </div>
           </>
         </div>

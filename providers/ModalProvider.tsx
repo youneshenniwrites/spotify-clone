@@ -1,5 +1,6 @@
 "use client";
 
+import { AuthModal } from "@/components/AuthModal";
 import { useMounted } from "@/hooks/useMounted";
 
 export const ModalProvider = () => {
@@ -9,5 +10,9 @@ export const ModalProvider = () => {
     return null;
   }
 
-  return <div>Hi</div>;
+  return (
+    <>
+      <AuthModal />
+    </>
+  );
 };
