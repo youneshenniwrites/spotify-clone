@@ -1,7 +1,13 @@
 "use client";
 
-import { Modal } from "@/components/Modal";
+import { useMounted } from "@/hooks/useMounted";
 
 export const ModalProvider = () => {
-  return <Modal />;
+  const isMounted = useMounted();
+
+  if (!isMounted) {
+    return null;
+  }
+
+  return <div>Hi</div>;
 };
